@@ -14,12 +14,11 @@ export default async function Register(req:Request , res:Response){
             })
       }
       
-      const checkEmail = await User.findOne({username:{$eq:username}})
-      if (email === checkEmail?.email){
+      const checkEmail = await User.findOne({email:{$eq:email}})
+      if (checkEmail){
             res.status(400).json({
                   "message":"repeat email"
             })
-      
       }else{
             const saltRounds:number = parseInt(process.env.SALT as string)
             try{

@@ -1,13 +1,13 @@
 import * as mongoose from "mongoose";
 import * as dotenv from "dotenv"
-import {userProps} from "../interface/userProps"
+import {userModel} from "../interface/userModel"
 
 dotenv.config()
 
 const url:string = String(process.env.URL)
 mongoose.connect(url)
 
-const userSchema = new mongoose.Schema<userProps>({
+const userSchema = new mongoose.Schema<userModel>({
       firstname:{type:String , required:true , trim:true},
       lastname:{type:String , required:true , trim:true},
       tel:{type:String , required:true},
@@ -16,4 +16,4 @@ const userSchema = new mongoose.Schema<userProps>({
       password:{type:String , required:true},
 })
 
-export default mongoose.model<userProps>("User",userSchema)
+export default mongoose.model<userModel>("User",userSchema)

@@ -1,4 +1,4 @@
-export interface userProps{
+export interface userModel{
       firstname:string,
       lastname:string,
       tel:string,

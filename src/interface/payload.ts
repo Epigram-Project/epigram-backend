@@ -1,5 +1,6 @@
-export interface payloadProps {
-      username:string
-      age:number
-      iat:number
-  }
+export interface payloadInterface{
+    firstname:string
+    lastname:string
+    username:string
+    iat:number
+}
