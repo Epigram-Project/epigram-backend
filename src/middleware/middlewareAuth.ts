@@ -1,10 +1,8 @@
 import { Request , Response , NextFunction, RequestHandler } from "express"
 import * as jwt from "jsonwebtoken"
 
-import { secretProps } from "../interface/secret"
-
 export const checkToken:RequestHandler = (req:Request , res:Response , next:NextFunction) => {
-      const secret:secretProps = String(process.env.SECRET)
+      const secret = String(process.env.SECRET)
 
       if (!req.headers.token){
             res.status(400).json({

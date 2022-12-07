@@ -20,7 +20,7 @@ function changeTypePassword(password:string | number):string {
 
 export default async function Login(req:Request , res:Response){
       const {username , password} = req.body
-
+      
       try{
             const result = await user.findOne({username:{$eq:username}})
             if (!result){
